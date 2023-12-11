@@ -6,7 +6,7 @@ commit-msg:
 pre-commit:
   commands:
     pretty:
-      glob: "*.dart"
+      glob: "packages/**.dart"
       run: dart format {staged_files} && git add {staged_files}
     linter:
       run: melos analyze
