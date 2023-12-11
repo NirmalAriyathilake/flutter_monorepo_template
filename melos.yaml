@@ -5,6 +5,8 @@ packages:
   - packages/**
 
 scripts:
+  prepare: melos bootstrap && melos run generate:build
+
   get:
     exec: flutter pub get
 

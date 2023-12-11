@@ -1,0 +1,18 @@
+commit-msg:
+  commands:
+    validate:
+      run: dart pub run ./lefthook/commit_message.dart
+
+pre-commit:
+  commands:
+    pretty:
+      glob: "*.dart"
+      run: dart format {staged_files} && git add {staged_files}
+
+pre-push:
+  parallel: true
+  commands:
+    tests:
+      run: melos test
+    linter:
+      run: melos analyze
