@@ -1,0 +1,22 @@
+name: flutter_monorepo
+
+packages:
+  - apps/**
+  - packages/**
+
+scripts:
+  get:
+    exec: flutter pub get
+
+  generate:build:
+    exec: dart pub run build_runner build --delete-conflicting-outputs
+    packageFilters:
+      dependsOn: build_runner
+
+  generate:watch:
+    exec: dart pub run build_runner watch --delete-conflicting-outputs
+    packageFilters:
+      dependsOn: build_runner
+
+  analyze:
+    exec: dart analyze --no-fatal-infos
