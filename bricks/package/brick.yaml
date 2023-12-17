@@ -1,0 +1,39 @@
+name: package
+description: A new brick created with the Mason CLI.
+
+version: 0.1.0+1
+
+environment:
+  mason: ">=0.1.0-dev.51 <0.1.0"
+
+vars:
+  type:
+    type: enum
+    description: Type of the package
+    prompt: What is the type of the package?
+    values:
+      - core
+      - feature
+      - shared
+
+  name:
+    type: string
+    description: Name of the package
+    default: app_package
+    prompt: What is the name of the package?
+  
+  description:
+    type: string
+    description: Description of the package
+    default: A package
+    prompt: What is the description of the package?
+
+  layers:
+    type: array
+    description: Layers of the package
+    prompt: What are the layers of the package?
+    values:
+      - application
+      - data
+      - domain
+      - presentation

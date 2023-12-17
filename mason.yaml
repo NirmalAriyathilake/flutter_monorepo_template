@@ -1,4 +1,4 @@
 bricks:
-  new_feature:
-    path: bricks/new_feature
   flutter_bloc_feature: ^0.3.0
+  package:
+    path: "bricks\\package"

@@ -1,0 +1,26 @@
+name: {{{package_id}}}
+description: {{{description}}}
+version: 0.0.1
+
+homepage: none
+publish_to: none
+
+environment:
+  sdk: ">=3.2.3 <4.0.0"
+  flutter: ">=1.17.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  {{#is_core}}core_dependencies:
+    path: ../core_dependencies{{/is_core}}
+  {{^is_core}}core_dependencies:
+    path: ../../core/core_dependencies{{/is_core}}
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+
+flutter:

@@ -1,18 +1,20 @@
 commit-msg:
   commands:
     validate:
-      run: dart pub run ./lefthook/commit_message.dart
+      run: dart run ./git_hooks/commit_message.dart
 
 pre-commit:
   commands:
     pretty:
       glob: "**.dart"
+      exclude: "bricks/"
       run: dart format {staged_files} && git add {staged_files}
     linter:
-      run: melos analyze
+      exclude: "bricks/"
+      run: dart analyze {staged_files}
 
 # pre-push:
 #   parallel: true
 #   commands:
 #     tests:
-#       run: melos test
+#       run: melos run test
